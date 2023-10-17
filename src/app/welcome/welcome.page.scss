@@ -1,0 +1,12 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000; /* Color de fondo opcional */
+  }
+  
+  img {
+    max-width: 60%;
+    max-height: 60%;
+  }

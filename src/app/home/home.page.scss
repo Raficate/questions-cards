@@ -1,27 +1,96 @@
-#container {
-  text-align: center;
+// #container {
+//   text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+// #container strong {
+//   font-size: 20px;
+//   line-height: 26px;
+// }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+// #container p {
+//   font-size: 16px;
+//   line-height: 22px;
 
-  color: #8c8c8c;
+//   color: #8c8c8c;
 
+//   margin: 0;
+// }
+
+// #container a {
+//   text-decoration: none;
+// }
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  
 }
 
-#container a {
-  text-decoration: none;
+ion-content {
+  background: #112031;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.title {
+  position: relative;
+  width: auto;
+  height: 60vh;    
+}
+.title div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: cadetblue; 
+}
+
+.button-e {
+  position: relative;
+  width: auto;
+  height: 20vh;    
+}
+
+.button-e div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(28, 45, 201); 
+}
+
+.button-s {
+  position: relative;
+  width: auto;
+  height: 20vh;    
+}
+
+.button-s div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(184, 76, 76); 
+}
+
+h1 {
+  font-size: 50pt;
+  color: #f1f1f1;
+  margin: auto 30px auto;
 }

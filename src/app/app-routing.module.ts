@@ -8,12 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
-    path: 'card',
+    path: 'card/:loop',
     loadChildren: () => import('./card/card.module').then( m => m.CardPageModule)
+  },
+  {
+    path: 'carta/:loop',
+    loadChildren: () => import('./carta/carta.module').then( m => m.CartaPageModule)
+  },
+  {
+    path: 'counter/:lang',
+    loadChildren: () => import('./counter/counter.module').then( m => m.CounterPageModule)
+  },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
   },
 ];
 

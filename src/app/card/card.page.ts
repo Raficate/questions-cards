@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import data from '../../assets/questions.json';
 import { Platform } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -9,22 +10,10 @@ import { Platform } from '@ionic/angular';
 })
 export class CardPage implements OnInit {
 
-
-  // isFlipped: boolean = false;
-  // cartaText: string = 'Texto de la carta desde JSON';
-
-  // flipCard() {
-  //   this.isFlipped = !this.isFlipped;
-  // }
-
-  // resetCard() {
-  //   this.isFlipped = false;
-  //   this.cartaText = 'Nuevo texto de la carta desde JSON';
-  // }
-  
   cardText: string;
+  loop = Number(this.route.snapshot.params['loop']) - 1;
 
-  constructor(private platform: Platform) { }
+  constructor(private platform: Platform, private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
     this.cardText = data.questions[this.getRandomInt(data.questions.length)]
@@ -37,14 +26,12 @@ export class CardPage implements OnInit {
 
   // Función para reiniciar la página actual
   resetPage() {
-    window.location.reload();
-    // console.log("holaholahola")
-    // const currentUrl = this.platform.url();
-    // this.platform
-    //   .ready()
-    //   .then(() => {
-    //     history.replaceState({}, '', currentUrl);
-    //   });
+    if(this.loop == 0){
+      this.router.navigate(['/home']);
+    }else {
+      this.router.navigate(['/card/'+ this.loop]);
+    }
+    
   }
 
 }
