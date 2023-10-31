@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import data from '../../assets/questions.json';
 import { Platform } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { FirestoreService } from '../services/data/firestore.service';
+import { Question } from '../models/question.interface';
 
 @Component({
   selector: 'app-card',
@@ -12,13 +15,21 @@ export class CardPage implements OnInit {
 
   cardText: string;
   loop = Number(this.route.snapshot.params['loop']) - 1;
+  questions: Question[];
+  size: number;
 
-  constructor(private platform: Platform, private route: ActivatedRoute, private router:Router) { }
+  constructor(private platform: Platform, private route: ActivatedRoute, private router:Router, private firestoreService: FirestoreService) { }
 
   ngOnInit() {
-    this.cardText = data.questions[this.getRandomInt(data.questions.length)]
+    this.getQuestions();
   }
 
+  getQuestions(){
+    this.firestoreService.getQuestions().subscribe(questions => {
+      this.size  = questions.length;
+      this.cardText = questions[this.getRandomInt(this.size)].body;
+    })
+  }
 
   getRandomInt(max: number) {
     return Math.floor(Math.random() * max);

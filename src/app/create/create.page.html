@@ -1,0 +1,25 @@
+<ion-content padding>
+  <form [formGroup]="createQuestionForm" (submit)="createQuestion()">
+    <ion-item>
+      <ion-label stacked>Question body:</ion-label>
+      <ion-input formControlName="body" type="text" id="body">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Question type:</ion-label>
+      <ion-input formControlName="type" type="text" id="body">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Question languaje:</ion-label>
+      <ion-input formControlName="languaje" type="text">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="!createQuestionForm.valid">
+      Add Question
+    </ion-button>
+  </form>
+</ion-content>

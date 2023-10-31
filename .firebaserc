@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "questions-ba71f": {
+      "hosting": {
+        "app": [
+          "questions-ba71f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "questions-ba71f"
+  }
+}
