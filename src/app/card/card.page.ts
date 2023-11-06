@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FirestoreService } from '../services/data/firestore.service';
 import { Question } from '../models/question.interface';
+import { getElement } from 'ionicons/dist/types/stencil-public-runtime';
 
 @Component({
   selector: 'app-card',
